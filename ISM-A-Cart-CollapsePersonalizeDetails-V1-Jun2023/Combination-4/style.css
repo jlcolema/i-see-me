@@ -1,0 +1,232 @@
+/*
+	Combination 4
+  01. Collapsed Personalization Details
+  02. Collapsed Apply Promo
+  03. Collapsed Gift Card
+*/
+
+/* Class added to `body` */
+
+.cart-collapse-test {}
+
+.cart-collapse-test--4 {}
+
+.cart.table-wrapper {
+  padding-bottom: 20px;
+}
+
+/* Section 1: Cart List */
+
+.cart.item {}
+
+  .cart.item .item-info {}
+
+    .cart.item .item {}
+
+      .cart.item .product-item-head {}
+
+        .cart.item .product-item-photo {}
+
+        .cart.item .product-item-head .mobile-display {}
+
+          .cart.item .product-item-head .mobile-display .product-item-subtotal {
+            flex-direction: column-reverse;
+            align-items: flex-start !important;
+          }
+
+            .cart.item .product-item-head .mobile-display .subtotal {
+              margin-bottom: 16px;
+            }
+
+          .cart.item .product-item-head .mobile-display .item-actions {
+            display: none;
+          }
+
+        .cart.item .product-item-head .action-delete {
+          display: block;
+          padding-right: 16px;
+          font-size: 15px;
+          font-weight: 400;
+          font-family: "Poppins";
+          text-align: center;
+          color: #4376a9;
+          text-decoration: underline;
+        }
+
+        @media screen and (min-width: 768px) {
+          .cart.item .product-item-head .action-delete {
+            display: none;
+          }
+        }
+
+      .cart.item .product-item-details {}
+
+        .cart.item .product-item-name {}
+
+        .cart.item .cart-item-details-toggle {
+          font-family: "Poppins";
+          white-space: nowrap;
+        }
+
+        @media screen and (max-width: 767px) {
+          .cart.item .cart-item-details-toggle {
+            padding-left: 119px;
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          .cart.item .cart-item-details-toggle {
+            margin-top: 8px;
+          }
+        }
+
+          .cart.item .cart-item-details-toggle__link {
+            position: relative;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: 400;
+            color: #4376a9;
+          }
+
+            .cart.item .cart-item-details-toggle__link span {
+              text-decoration: underline;
+            }
+
+          .cart.item .cart-item-details-toggle__link:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 5px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border: solid #4376a9;
+            border-width: 0 1px 1px 0;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            z-index: 1;
+          }
+
+          /* When toggled to visible, rotate the arrow 180 degrees. */
+
+          .cart.item .product-item-details--is-visible .cart-item-details-toggle__link:after {
+            top: 9px;
+            -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+          }
+
+        .cart.item .cart-item-details-wrapper {
+          display: none;
+        }
+
+        /* When toggled to visible */
+
+        .cart.item .product-item-details--is-visible .cart-item-details-wrapper {
+          display: block;
+        }
+
+          .cart.item .options-forms {}
+
+            .cart.item .options-item {}
+
+              .cart.item .options-item dt {}
+
+              @media screen and (max-width: 767px) {
+                .cart.item .options-item dt {
+                  width: calc(119px - 0.5rem) !important;
+                }
+              }
+
+              .cart.item .options-item dd {}
+
+          .cart.item .cart-item-details-wrapper .action-edit {
+            margin-left: 119px;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: "Poppins";
+            color: #4376a9;
+            text-decoration: underline;
+          }
+
+          @media screen and (min-width: 768px) {
+            .cart.item .cart-item-details-wrapper .action-edit {
+              margin-left: 0;
+            }
+          }
+
+    .cart.item .col.subtotal {}
+
+      .cart.item .col.subtotal .action-delete {
+        display: none;
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: "Poppins";
+        text-align: right;
+        color: #4376a9;
+        text-decoration: underline;
+      }
+
+      @media screen and (min-width: 768px) {
+        .cart.item .col.subtotal .action-delete {
+          display: block;
+        }
+      }
+
+  .cart.item tr.item-actions {
+    display: none;
+  }
+
+/* Section 2: Cart Summary */
+
+.cart-discount {}
+
+  .cart-discount .discount,
+  .cart-discount .aw-giftcard {}
+
+    .cart-discount .discount .field,
+    .cart-discount .aw-giftcard .field {}
+
+      .cart-discount .discount .label,
+      .cart-discount .aw-giftcard .label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @media screen and (min-width: 440px) {
+        .cart-discount .discount .label,
+        .cart-discount .aw-giftcard .label {
+          display: inline-block;
+        }
+      }
+
+        .cart-discount .discount .code-toggle,
+        .cart-discount .aw-giftcard .code-toggle {
+          align-self: center;
+          color: #4376a9;
+          text-decoration: underline;
+        }
+
+        @media screen and (min-width: 440px) {
+          .cart-discount .discount .code-toggle,
+          .cart-discount .aw-giftcard .code-toggle {
+            margin-left: 5px;
+          }
+        }
+
+          .cart-discount .discount .code-toggle span,
+          .cart-discount .aw-giftcard .code-toggle span {}
+
+      .cart-discount .discount .control,
+      .cart-discount .aw-giftcard .control {
+        display: none;
+      }
+
+      /* When the code form is visible. */
+
+      .cart-discount .discount .field--is-visible .control,
+      .cart-discount .aw-giftcard .field--is-visible .control {
+        display: block;
+        margin-top: 10px;
+      }

@@ -1,0 +1,243 @@
+/*
+	Combination 3
+  01. Expanded Personalization Details
+  02. Collapsed Apply Promo
+  03. Collapsed Gift Card
+*/
+
+/* Section 1 is the list of products in the cart. */
+
+/*
+
+  <tbody class="cart-item">
+
+    <tr class="item-info">
+
+      <td data-th="Item" class="col item">
+        <div class="product-item-head">
+          <a class="product-item-photo">
+            <span class="product-image-container">
+              <span class="product-image-wrapper">
+                <img class="product-image-photo" />
+              </span>
+            </span>
+          </a>
+        </div>
+        <div class="product-item-details">
+          <strong class="product-item-name">
+            <a href="#">If My Dog Could Talk</a>
+          </strong>
+          <dl class="options-forms">
+            <dl class="options-item">
+              <dt>Title</dt>
+              <dd>Details</dd>
+            </dl>
+          </dl>
+        </div>
+      </td>
+
+      <td data-th="Price" class="col price">
+        <span class="price-exluding-tax">
+          <span class="cart-price">
+            <span class="price">
+              <span class="price">$34.99</span>
+            </span>
+          </span>
+        </span>
+      </td>
+
+      <td data-th="Qty" class="col qty">
+        <div class="field qty">
+          <div class="control qty">
+            <label>
+              <span class="label">Qty</span>
+              <select class="input-text qty"></select>
+              <input class="input-text qty" />
+              <button type="submit">Update</button>
+            </label>
+          </div>
+        </div>
+      </td>
+
+      <td data-th="Subtotal" class="col subtotal">
+        <span class="price-exluding-tax">
+          <span class="cart-price">
+            <span class="price">
+              <span class="price">$34.99</span>
+            </span>
+          </span>
+        </span>
+      </td>
+
+    </tr>
+
+    <tr class="item-actions">
+
+      <td colspan="4">
+
+        <div class="actions-toolbar">
+
+          <div class="gift-options-cart-item">
+            <!-- ko template: getTemplate() -->
+            <!-- ko if: isActive() || hasActiveOptions() -->
+            <!-- /ko -->
+            <!-- /ko -->
+          </div>
+
+          <a class="action action-edit">
+            <span>Edit Personalization</span>
+          </a>
+
+          <a class="action action-delete">
+            <span>Remove item</span>
+          </a>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+*/
+
+/* Section 2 is the order summary. */
+
+/*
+
+  <div class="cart-summary">
+
+    <strong class="summary-title">Order Summary</strong>
+
+    <div id="shipping-message"></div>
+
+    <div class="cart-discount">
+
+      <div class="block discount">
+
+        <div class="title">
+          <strong id="block-discount-heading">Apply Discount Code</strong>
+        </div>
+
+        <div class="content">
+
+          <form id="discount-coupon-form">
+
+            <div class="fieldset coupon">
+
+              <input id="remove-coupon" />
+
+              <div class="field">
+
+                <label for="coupon_code" class="label">
+                  <span>Enter discount</span>
+                </label>
+
+                <div class="control"></div>
+
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="block aw-giftcard">
+
+        <div class="title">
+          <strong id="block-aw-giftcard-heading">Gift Card Options</strong>
+        </div>
+
+        <div class="content">
+
+          <div id="aw_giftcard__code_info"></div>
+
+          <form id="discount-aw-giftcard-form">
+
+            <div class="fieldset aw-giftcard">
+
+              <div class="field">
+
+                <label class="label">
+                  <span>Enter Gift Card code</span>
+                </label>
+
+                <div class="control"></div>
+
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+*/
+
+.cart-collapse-test {}
+
+.cart-collapse-test--3 {}
+
+/* Section 2: Cart Summary */
+
+.cart-discount {}
+
+  .cart-discount .discount,
+  .cart-discount .aw-giftcard {}
+
+    .cart-discount .discount .field,
+    .cart-discount .aw-giftcard .field {}
+
+      .cart-discount .discount .label,
+      .cart-discount .aw-giftcard .label {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @media screen and (min-width: 440px) {
+        .cart-discount .discount .label,
+        .cart-discount .aw-giftcard .label {
+          display: inline-block;
+        }
+      }
+
+        .cart-discount .discount .code-toggle,
+        .cart-discount .aw-giftcard .code-toggle {
+          align-self: center;
+          color: #4376a9;
+          text-decoration: underline;
+        }
+
+        @media screen and (min-width: 440px) {
+          .cart-discount .discount .code-toggle,
+          .cart-discount .aw-giftcard .code-toggle {
+            margin-left: 5px;
+          }
+        }
+
+          .cart-discount .discount .code-toggle span,
+          .cart-discount .aw-giftcard .code-toggle span {}
+
+      .cart-discount .discount .control,
+      .cart-discount .aw-giftcard .control {
+        display: none;
+      }
+
+      /* When the code form is visible. */
+
+      .cart-discount .discount .field--is-visible .control,
+      .cart-discount .aw-giftcard .field--is-visible .control {
+        display: block;
+        margin-top: 10px;
+      }
